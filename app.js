@@ -44,6 +44,9 @@ function validate(itemName, amountStr, category) {
   };
 }
 
+// Export for Node.js testing environments without breaking browser execution
+if (typeof module !== 'undefined') module.exports = { validate, formatAmount };
+
 // =============================================================================
 // === DATA MODEL & STATE ===
 // =============================================================================
@@ -145,3 +148,57 @@ function isValidTransaction(obj) {
     typeof obj.timestamp === 'number'
   );
 }
+
+/**
+ * Persistence helpers for reading and writing the transaction list to
+ * localStorage. Both methods are wrapped in try/catch so storage errors
+ * (QuotaExceededError, SecurityError in private browsing, corrupt JSON) are
+ * surfaced as user-visible banner messages rather than uncaught exceptions.
+ */
+const storage = {
+  /**
+   * Persist the full transactions array to localStorage as JSON.
+   * On any storage error (e.g. QuotaExceededError when the storage quota is
+   * exceeded, or SecurityError in private-browsing mode), shows a user-facing
+   * error banner so the user is informed rather than silently losing data.
+   *
+   * @param {Transaction[]} transactions - The current in-memory transaction list
+   * @returns {void}
+   *
+   * Requirements: 5.1, 5.2
+   */
+  save(transactions) {
+    try {
+      localStorage.setItem('expense_transactions', JSON.stringify(transactions));
+    } catch (err) {
+      // QuotaExceededError or SecurityError in private browsing
+      showError('Could not save your data. Storage may be full or unavailable.');
+    }
+  },
+
+  /**
+   * Load and validate the transaction list from localStorage.
+   * - Returns [] when the key is absent (first visit or storage cleared).
+   * - Returns [] and shows an error banner when the stored value cannot be
+   *   parsed as JSON (completely corrupt data).
+   * - Filters each parsed entry through isValidTransaction, silently
+   *   discarding any malformed objects so partial corruption does not
+   *   wipe the rest of the list.
+   *
+   * @returns {Transaction[]} - A (possibly empty) array of valid transactions
+   *
+   * Requirements: 5.3, 5.4, 5.5
+   */
+  load() {
+    try {
+      const raw = localStorage.getItem('expense_transactions');
+      if (raw === null) return [];
+      const parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(isValidTransaction);
+    } catch (err) {
+      showError('Saved data could not be loaded. Starting with an empty list.');
+      return [];
+    }
+  },
+};

@@ -163,6 +163,76 @@
         "chatSessionId": "sess_d8a16888-dbc3-4f54-9328-d385c155a3c5",
         "timestamp": 1786160691673
       }
+    ],
+    "11.1 Write the `render()` function body": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164223410
+      }
+    ],
+    "12.1 Write `renderTransactionItem(tx)` using `createElement` (no `innerHTML` on user content)": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164223460
+      }
+    ],
+    "12.2 Write `deleteTransaction(id)` with optimistic update and snapshot rollback": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164223519
+      }
+    ],
+    "13.1 Write the `addTransaction` event handler wired to `#expense-form` submit": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164223559
+      }
+    ],
+    "14. Implement the `showError` / error banner module": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164223593
+      }
+    ],
+    "15. Implement keyboard accessibility and focus management": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164223632
+      }
+    ],
+    "16. Final integration checkpoint": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164223670
+      }
+    ],
+    "5.2 Write property test for `validate()` — whitespace-only names always rejected": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164234464
+      }
+    ],
+    "6.3 Write property test for `formatAmount()` — round-half-up rule": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164239999
+      }
+    ],
+    "7.3 Write `storage.load()` with try/catch and shape validation": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164245339
+      }
     ]
   }
 }

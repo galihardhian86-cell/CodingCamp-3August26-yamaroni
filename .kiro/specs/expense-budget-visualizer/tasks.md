@@ -49,7 +49,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - `category` error: empty string / no selection → "Please select a category"
     - _Requirements: 1.3, 1.4, 1.5, 1.6_
 
-  - [~] 5.2 Write property test for `validate()` — whitespace-only names always rejected
+  - [-] 5.2 Write property test for `validate()` — whitespace-only names always rejected
     - **Property 2: Whitespace-only item names are always rejected**
     - **Validates: Requirements 1.4**
     - Test that any string of only whitespace characters returns `valid: false` with an `itemName` error
@@ -71,7 +71,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - `getCategoryTotals`: reduce `state.transactions` into `{ category: total }` map
     - _Requirements: 3.5, 4.1, 4.4_
 
-  - [~] 6.3 Write property test for `formatAmount()` — round-half-up rule
+  - [-] 6.3 Write property test for `formatAmount()` — round-half-up rule
     - **Property 1: Balance equals sum of all transaction amounts (formatAmount correctness)**
     - **Validates: Requirements 3.1, 3.5**
     - Test that `formatAmount` produces the round-half-up result at the 0.005 boundary
@@ -86,7 +86,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - On `QuotaExceededError` or any error: call `showError('Could not save your data. Storage may be full or unavailable.')`
     - _Requirements: 5.1, 5.2_
 
-  - [~] 7.3 Write `storage.load()` with try/catch and shape validation
+  - [-] 7.3 Write `storage.load()` with try/catch and shape validation
     - Return `[]` when key is absent
     - `JSON.parse` the raw string; on parse failure call `showError(...)` and return `[]`
     - Filter parsed array through `isValidTransaction`; silently discard malformed entries
@@ -125,7 +125,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - Test that for any non-empty transaction list, `getCategoryTotals()` produces values proportional to the grand total within floating-point tolerance
 
 - [ ] 11. Implement the `render()` function
-  - [ ] 11.1 Write the `render()` function body
+  - [~] 11.1 Write the `render()` function body
     - Update `#balance-value` textContent with `'$' + formatAmount(total)` where `total` is `state.transactions.reduce((s, tx) => s + tx.amount, 0)`
     - Clear `#transaction-list` with `list.innerHTML = ''`, then sort a copy of `state.transactions` by `timestamp` descending and append each item via `renderTransactionItem(tx)`
     - Call `updateChart()`
@@ -135,13 +135,13 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
 
 
 - [ ] 12. Implement `renderTransactionItem(tx)` and the delete handler
-  - [ ] 12.1 Write `renderTransactionItem(tx)` using `createElement` (no `innerHTML` on user content)
+  - [~] 12.1 Write `renderTransactionItem(tx)` using `createElement` (no `innerHTML` on user content)
     - Truncate `tx.itemName` to 50 chars with `'…'` if longer
     - Build `<li>` with `createSpan('tx-name', name)`, `createSpan('tx-category', ...)`, `createSpan('tx-amount', '$' + formatAmount(tx.amount))`
     - Create `<button class="delete-btn">` with `aria-label="Delete " + tx.itemName` and attach click listener calling `deleteTransaction(tx.id)`
     - _Requirements: 2.1, 2.4, 6.2_
 
-  - [ ] 12.2 Write `deleteTransaction(id)` with optimistic update and snapshot rollback
+  - [~] 12.2 Write `deleteTransaction(id)` with optimistic update and snapshot rollback
     - Save `snapshot = [...state.transactions]`
     - Filter `state.transactions` to remove the entry, call `render()`
     - Call `storage.save(state.transactions)` inside try/catch; on failure restore `snapshot`, call `render()`, call `showError('Could not delete the transaction. Please try again.')`
@@ -153,7 +153,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - Test that after `deleteTransaction(id)`, `state.transactions` has length n−1 and contains no entry with that id
 
 - [ ] 13. Implement `addTransaction` form submit handler
-  - [ ] 13.1 Write the `addTransaction` event handler wired to `#expense-form` submit
+  - [~] 13.1 Write the `addTransaction` event handler wired to `#expense-form` submit
     - Call `event.preventDefault()`, then `clearErrors()` to wipe any previous inline error messages
     - Read `#item-name`, `#amount`, `#category` values; call `validate(itemName, amountStr, category)`
     - On invalid: populate each `<span class="error-msg">` with its error message and return
@@ -170,19 +170,19 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - **Validates: Requirements 5.1, 5.2**
     - Test that after any add operation, `JSON.parse(localStorage.getItem('expense_transactions'))` is structurally identical to `state.transactions`
 
-- [ ] 14. Implement the `showError` / error banner module
+- [~] 14. Implement the `showError` / error banner module
   - Write `showError(message)` that sets `#app-error` textContent to `message`, removes the `hidden` attribute, and starts a 5-second `setTimeout` to re-add `hidden`
   - Attach a click listener on `#app-error` that immediately re-hides the banner and clears the timeout
   - _Requirements: 2.5, 5.4_
 
-- [ ] 15. Implement keyboard accessibility and focus management
+- [~] 15. Implement keyboard accessibility and focus management
   - Verify that `<label>` elements are correctly associated to all form inputs via `for`/`id` pairs (already in HTML scaffold — confirm in code)
   - Ensure the delete button's `aria-label` includes the transaction name (already set in `renderTransactionItem` — verify)
   - Add `:focus-visible` CSS rules for `input`, `select`, `button`, and `a` elements with a visible outline that meets contrast requirements
   - Confirm `<ul id="transaction-list">` has `role="list"` and `aria-label="Expense transactions"`, and `<canvas>` has `role="img"` and `aria-label`
   - _Requirements: 6.2, 6.3_
 
-- [ ] 16. Final integration checkpoint
+- [~] 16. Final integration checkpoint
   - Wire all sections of `app.js` together: confirm `DOMContentLoaded` handler calls `initChart()` before first `render()`, confirm `addTransaction` listener is attached to `#expense-form`, confirm all functions are in scope
   - Manually verify the smoke-test checklist from the design's Tier 1 tests:
     1. Add one transaction per category; confirm balance, list, and chart update

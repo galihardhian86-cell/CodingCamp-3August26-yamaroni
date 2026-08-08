@@ -1,0 +1,9 @@
+{
+  "name": "expense-budget-visualizer",
+  "version": "1.0.0",
+  "description": "Client-side expense tracker and budget visualizer",
+  "scripts": {
+    "test": "node tests/validate.test.js"
+  },
+  "private": true
+}
