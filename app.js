@@ -45,7 +45,7 @@ function validate(itemName, amountStr, category) {
 }
 
 // Export for Node.js testing environments without breaking browser execution
-if (typeof module !== 'undefined') module.exports = { validate, formatAmount };
+if (typeof module !== 'undefined') module.exports = { validate, formatAmount, isValidTransaction, storage };
 
 // =============================================================================
 // === DATA MODEL & STATE ===
@@ -202,3 +202,86 @@ const storage = {
     }
   },
 };
+
+// =============================================================================
+// === CHART MODULE ===
+// =============================================================================
+
+/** @type {import('chart.js').Chart|null} */
+let pieChart = null;
+
+/**
+ * Initialise the Chart.js pie chart on the #expense-chart canvas.
+ * Must be called once after DOMContentLoaded, before the first render().
+ * Assigns the Chart instance to the module-level `pieChart` variable.
+ *
+ * Requirements: 4.1, 4.4, 4.5
+ */
+function initChart() {
+  const canvas = document.getElementById('expense-chart');
+  pieChart = new Chart(canvas, {
+    type: 'pie',
+    data: {
+      labels: [],
+      datasets: [{
+        data: [],
+        backgroundColor: [],
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            padding: 16,
+            boxWidth: 12,
+          },
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              const total = context.dataset.data.reduce((s, v) => s + v, 0);
+              const pct   = total > 0 ? ((context.parsed / total) * 100).toFixed(1) : '0.0';
+              return `${context.label}: $${formatAmount(context.parsed)} (${pct}%)`;
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+// =============================================================================
+// === APP INITIALISATION ===
+// =============================================================================
+
+/**
+ * Bootstrap the application once the DOM is fully parsed.
+ *
+ * Steps:
+ *  1. Load persisted transactions from localStorage and filter out any
+ *     malformed entries via `isValidTransaction` (defensive double-filter
+ *     in addition to the one inside `storage.load()`).
+ *  2. Assign the clean array to `state.transactions`.
+ *  3. Initialise the Chart.js instance via `initChart()` — must happen before
+ *     the first `render()` call so the `pieChart` reference is available.
+ *  4. Call `render()` to paint the initial DOM state.
+ *  5. Wire the form submit handler so `addTransaction` is called on every
+ *     subsequent submission.
+ *
+ * Requirements: 5.3, 5.4, 5.5
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Load persisted transactions, filtering out any malformed entries
+  const loaded = storage.load();
+  state.transactions = loaded.filter(isValidTransaction);
+
+  // Initialise chart first, then render the initial state
+  initChart();
+  render();
+
+  // Wire up form submission
+  document.getElementById('expense-form').addEventListener('submit', addTransaction);
+});

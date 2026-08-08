@@ -49,7 +49,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - `category` error: empty string / no selection → "Please select a category"
     - _Requirements: 1.3, 1.4, 1.5, 1.6_
 
-  - [-] 5.2 Write property test for `validate()` — whitespace-only names always rejected
+  - [x] 5.2 Write property test for `validate()` — whitespace-only names always rejected
     - **Property 2: Whitespace-only item names are always rejected**
     - **Validates: Requirements 1.4**
     - Test that any string of only whitespace characters returns `valid: false` with an `itemName` error
@@ -71,7 +71,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - `getCategoryTotals`: reduce `state.transactions` into `{ category: total }` map
     - _Requirements: 3.5, 4.1, 4.4_
 
-  - [-] 6.3 Write property test for `formatAmount()` — round-half-up rule
+  - [x] 6.3 Write property test for `formatAmount()` — round-half-up rule
     - **Property 1: Balance equals sum of all transaction amounts (formatAmount correctness)**
     - **Validates: Requirements 3.1, 3.5**
     - Test that `formatAmount` produces the round-half-up result at the 0.005 boundary
@@ -86,18 +86,18 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - On `QuotaExceededError` or any error: call `showError('Could not save your data. Storage may be full or unavailable.')`
     - _Requirements: 5.1, 5.2_
 
-  - [-] 7.3 Write `storage.load()` with try/catch and shape validation
+  - [x] 7.3 Write `storage.load()` with try/catch and shape validation
     - Return `[]` when key is absent
     - `JSON.parse` the raw string; on parse failure call `showError(...)` and return `[]`
     - Filter parsed array through `isValidTransaction`; silently discard malformed entries
     - _Requirements: 5.3, 5.4, 5.5_
 
-  - [~] 7.4 Write property test for localStorage round-trip
+  - [-] 7.4 Write property test for localStorage round-trip
     - **Property 7: localStorage round-trip preserves all transaction fields**
     - **Validates: Requirements 5.3, 5.5**
     - Test that any array of valid transactions saved via `storage.save` and loaded via `storage.load` is identical in fields and order
 
-- [~] 8. Implement app initialisation (DOMContentLoaded)
+- [-] 8. Implement app initialisation (DOMContentLoaded)
   - Wire a `DOMContentLoaded` listener that calls `storage.load()`, filters results through `isValidTransaction`, assigns to `state.transactions`, then calls `render()` and `initChart()`
   - If `storage.load()` returns a non-empty array after filtering, do not show the error banner
   - _Requirements: 5.3, 5.4, 5.5_
@@ -107,7 +107,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 10. Implement `initChart()` and Chart.js integration
-  - [~] 10.1 Write `initChart()` to create the Chart.js pie chart instance
+  - [-] 10.1 Write `initChart()` to create the Chart.js pie chart instance
     - Call `new Chart(canvas, { type: 'pie', data: { labels: [], datasets: [{ data: [], backgroundColor: [] }] }, options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { ... } } } })`
     - Assign the instance to a module-level `pieChart` variable
     - _Requirements: 4.1, 4.4, 4.5_

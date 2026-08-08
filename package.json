@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Client-side expense tracker and budget visualizer",
   "scripts": {
-    "test": "node tests/validate.test.js"
+    "test": "node tests/validate.test.js",
+    "test:format": "node tests/formatAmount.test.js",
+    "test:storage": "node tests/storage.test.js"
   },
   "private": true
 }

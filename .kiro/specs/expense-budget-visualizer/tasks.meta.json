@@ -1,5 +1,14 @@
 {
-  "pbtResults": {},
+  "pbtResults": {
+    "5.2 Write property test for `validate()` — whitespace-only names always rejected": {
+      "status": "passed",
+      "lastRunTimestamp": 1786164598606
+    },
+    "6.3 Write property test for `formatAmount()` — round-half-up rule": {
+      "status": "passed",
+      "lastRunTimestamp": 1786164668670
+    }
+  },
   "executionHistory": {
     "1. Scaffold project files and HTML skeleton": [
       {
@@ -218,6 +227,11 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164234464
+      },
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164691184
       }
     ],
     "6.3 Write property test for `formatAmount()` — round-half-up rule": [
@@ -225,6 +239,11 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164239999
+      },
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164700080
       }
     ],
     "7.3 Write `storage.load()` with try/catch and shape validation": [
@@ -232,6 +251,32 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164245339
+      },
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164705293
+      }
+    ],
+    "7.4 Write property test for localStorage round-trip": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164723406
+      }
+    ],
+    "8. Implement app initialisation (DOMContentLoaded)": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164729590
+      }
+    ],
+    "10.1 Write `initChart()` to create the Chart.js pie chart instance": [
+      {
+        "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786164735040
       }
     ]
   }
