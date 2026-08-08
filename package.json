@@ -5,7 +5,8 @@
   "scripts": {
     "test": "node tests/validate.test.js",
     "test:format": "node tests/formatAmount.test.js",
-    "test:storage": "node tests/storage.test.js"
+    "test:storage": "node tests/storage.test.js",
+    "test:chart": "node tests/chart.test.js"
   },
   "private": true
 }

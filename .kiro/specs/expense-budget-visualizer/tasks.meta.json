@@ -11,6 +11,10 @@
     "7.4 Write property test for localStorage round-trip": {
       "status": "passed",
       "lastRunTimestamp": 1786165137990
+    },
+    "10.3 Write property test for chart proportionality": {
+      "status": "passed",
+      "lastRunTimestamp": 1786165778325
     }
   },
   "executionHistory": {
@@ -182,6 +186,16 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164223410
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165424757
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165652055
       }
     ],
     "12.1 Write `renderTransactionItem(tx)` using `createElement` (no `innerHTML` on user content)": [
@@ -189,6 +203,16 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164223460
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165686138
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166111491
       }
     ],
     "12.2 Write `deleteTransaction(id)` with optimistic update and snapshot rollback": [
@@ -196,6 +220,16 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164223519
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166124442
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166217560
       }
     ],
     "13.1 Write the `addTransaction` event handler wired to `#expense-form` submit": [
@@ -203,6 +237,16 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164223559
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166130740
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166228860
       }
     ],
     "14. Implement the `showError` / error banner module": [
@@ -210,6 +254,16 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164223593
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165431167
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165658573
       }
     ],
     "15. Implement keyboard accessibility and focus management": [
@@ -217,6 +271,16 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164223632
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165436725
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165665408
       }
     ],
     "16. Final integration checkpoint": [
@@ -224,6 +288,16 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164223670
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166285325
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166831625
       }
     ],
     "5.2 Write property test for `validate()` — whitespace-only names always rejected": [
@@ -267,6 +341,11 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164723406
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165396575
       }
     ],
     "8. Implement app initialisation (DOMContentLoaded)": [
@@ -274,6 +353,11 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164729590
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165402214
       }
     ],
     "10.1 Write `initChart()` to create the Chart.js pie chart instance": [
@@ -281,6 +365,82 @@
         "executionId": "60761c6d-399c-433f-9ec1-3c643beb9887",
         "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
         "timestamp": 1786164735040
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165407025
+      }
+    ],
+    "10.2 Write `updateChart()` called inside `render()`": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165412714
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165642656
+      }
+    ],
+    "11. Implement the `render()` function": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165652082
+      }
+    ],
+    "10.3 Write property test for chart proportionality": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786165680126
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166104893
+      }
+    ],
+    "10. Implement `initChart()` and Chart.js integration": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166104942
+      }
+    ],
+    "12. Implement `renderTransactionItem(tx)` and the delete handler": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166217623
+      }
+    ],
+    "13. Implement `addTransaction` form submit handler": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166228896
+      }
+    ],
+    "7. Implement the Storage module in `app.js`": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166270432
+      }
+    ],
+    "9. Checkpoint — open `index.html` in a browser and verify scaffolding": [
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166277700
+      },
+      {
+        "executionId": "03fc33fc-7fb4-423c-bc7a-f431334890a3",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786166819609
       }
     ]
   }

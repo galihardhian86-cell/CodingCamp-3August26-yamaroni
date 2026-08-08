@@ -76,7 +76,7 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - **Validates: Requirements 3.1, 3.5**
     - Test that `formatAmount` produces the round-half-up result at the 0.005 boundary
 
-- [ ] 7. Implement the Storage module in `app.js`
+- [x] 7. Implement the Storage module in `app.js`
   - [x] 7.1 Write `isValidTransaction(obj)` shape-guard function
     - Check: non-null object, `id` is non-empty string, `itemName` is non-empty string after trim, `amount` is number ≥ 0.01, `category` is one of Food/Transport/Fun, `timestamp` is number
     - _Requirements: 5.3, 5.5_
@@ -92,40 +92,40 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - Filter parsed array through `isValidTransaction`; silently discard malformed entries
     - _Requirements: 5.3, 5.4, 5.5_
 
-  - [-] 7.4 Write property test for localStorage round-trip
+  - [x] 7.4 Write property test for localStorage round-trip
     - **Property 7: localStorage round-trip preserves all transaction fields**
     - **Validates: Requirements 5.3, 5.5**
     - Test that any array of valid transactions saved via `storage.save` and loaded via `storage.load` is identical in fields and order
 
-- [-] 8. Implement app initialisation (DOMContentLoaded)
+- [x] 8. Implement app initialisation (DOMContentLoaded)
   - Wire a `DOMContentLoaded` listener that calls `storage.load()`, filters results through `isValidTransaction`, assigns to `state.transactions`, then calls `render()` and `initChart()`
   - If `storage.load()` returns a non-empty array after filtering, do not show the error banner
   - _Requirements: 5.3, 5.4, 5.5_
 
-- [~] 9. Checkpoint — open `index.html` in a browser and verify scaffolding
+- [x] 9. Checkpoint — open `index.html` in a browser and verify scaffolding
   - Ensure all HTML elements are present, CSS loads without errors, Chart.js CDN script loads, and `app.js` executes without console errors.
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 10. Implement `initChart()` and Chart.js integration
-  - [-] 10.1 Write `initChart()` to create the Chart.js pie chart instance
+- [x] 10. Implement `initChart()` and Chart.js integration
+  - [x] 10.1 Write `initChart()` to create the Chart.js pie chart instance
     - Call `new Chart(canvas, { type: 'pie', data: { labels: [], datasets: [{ data: [], backgroundColor: [] }] }, options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { ... } } } })`
     - Assign the instance to a module-level `pieChart` variable
     - _Requirements: 4.1, 4.4, 4.5_
 
-  - [~] 10.2 Write `updateChart()` called inside `render()`
+  - [x] 10.2 Write `updateChart()` called inside `render()`
     - Compute `getCategoryTotals()`, derive `labels`, `data`, `colors` arrays from entries with `total > 0`
     - Set `pieChart.data.labels`, `pieChart.data.datasets[0].data`, `pieChart.data.datasets[0].backgroundColor`
     - Call `pieChart.update('none')` for instant re-render (no animation)
     - Toggle `#expense-chart` hidden and `#chart-empty` hidden based on `state.transactions.length === 0`
     - _Requirements: 4.1, 4.2, 4.3, 4.5, 4.7_
 
-  - [~] 10.3 Write property test for chart proportionality
+  - [x] 10.3 Write property test for chart proportionality
     - **Property 8: Chart percentages are proportional and sum to 100%**
     - **Validates: Requirements 4.1, 4.4, 4.7**
     - Test that for any non-empty transaction list, `getCategoryTotals()` produces values proportional to the grand total within floating-point tolerance
 
-- [ ] 11. Implement the `render()` function
-  - [~] 11.1 Write the `render()` function body
+- [x] 11. Implement the `render()` function
+  - [x] 11.1 Write the `render()` function body
     - Update `#balance-value` textContent with `'$' + formatAmount(total)` where `total` is `state.transactions.reduce((s, tx) => s + tx.amount, 0)`
     - Clear `#transaction-list` with `list.innerHTML = ''`, then sort a copy of `state.transactions` by `timestamp` descending and append each item via `renderTransactionItem(tx)`
     - Call `updateChart()`
@@ -134,14 +134,14 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
 
 
 
-- [ ] 12. Implement `renderTransactionItem(tx)` and the delete handler
-  - [~] 12.1 Write `renderTransactionItem(tx)` using `createElement` (no `innerHTML` on user content)
+- [x] 12. Implement `renderTransactionItem(tx)` and the delete handler
+  - [x] 12.1 Write `renderTransactionItem(tx)` using `createElement` (no `innerHTML` on user content)
     - Truncate `tx.itemName` to 50 chars with `'…'` if longer
     - Build `<li>` with `createSpan('tx-name', name)`, `createSpan('tx-category', ...)`, `createSpan('tx-amount', '$' + formatAmount(tx.amount))`
     - Create `<button class="delete-btn">` with `aria-label="Delete " + tx.itemName` and attach click listener calling `deleteTransaction(tx.id)`
     - _Requirements: 2.1, 2.4, 6.2_
 
-  - [~] 12.2 Write `deleteTransaction(id)` with optimistic update and snapshot rollback
+  - [x] 12.2 Write `deleteTransaction(id)` with optimistic update and snapshot rollback
     - Save `snapshot = [...state.transactions]`
     - Filter `state.transactions` to remove the entry, call `render()`
     - Call `storage.save(state.transactions)` inside try/catch; on failure restore `snapshot`, call `render()`, call `showError('Could not delete the transaction. Please try again.')`
@@ -152,8 +152,8 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - **Validates: Requirements 2.4**
     - Test that after `deleteTransaction(id)`, `state.transactions` has length n−1 and contains no entry with that id
 
-- [ ] 13. Implement `addTransaction` form submit handler
-  - [~] 13.1 Write the `addTransaction` event handler wired to `#expense-form` submit
+- [x] 13. Implement `addTransaction` form submit handler
+  - [x] 13.1 Write the `addTransaction` event handler wired to `#expense-form` submit
     - Call `event.preventDefault()`, then `clearErrors()` to wipe any previous inline error messages
     - Read `#item-name`, `#amount`, `#category` values; call `validate(itemName, amountStr, category)`
     - On invalid: populate each `<span class="error-msg">` with its error message and return
@@ -170,19 +170,19 @@ Implement a fully client-side expense tracker as three files (`index.html`, `sty
     - **Validates: Requirements 5.1, 5.2**
     - Test that after any add operation, `JSON.parse(localStorage.getItem('expense_transactions'))` is structurally identical to `state.transactions`
 
-- [~] 14. Implement the `showError` / error banner module
+- [x] 14. Implement the `showError` / error banner module
   - Write `showError(message)` that sets `#app-error` textContent to `message`, removes the `hidden` attribute, and starts a 5-second `setTimeout` to re-add `hidden`
   - Attach a click listener on `#app-error` that immediately re-hides the banner and clears the timeout
   - _Requirements: 2.5, 5.4_
 
-- [~] 15. Implement keyboard accessibility and focus management
+- [x] 15. Implement keyboard accessibility and focus management
   - Verify that `<label>` elements are correctly associated to all form inputs via `for`/`id` pairs (already in HTML scaffold — confirm in code)
   - Ensure the delete button's `aria-label` includes the transaction name (already set in `renderTransactionItem` — verify)
   - Add `:focus-visible` CSS rules for `input`, `select`, `button`, and `a` elements with a visible outline that meets contrast requirements
   - Confirm `<ul id="transaction-list">` has `role="list"` and `aria-label="Expense transactions"`, and `<canvas>` has `role="img"` and `aria-label`
   - _Requirements: 6.2, 6.3_
 
-- [~] 16. Final integration checkpoint
+- [x] 16. Final integration checkpoint
   - Wire all sections of `app.js` together: confirm `DOMContentLoaded` handler calls `initChart()` before first `render()`, confirm `addTransaction` listener is attached to `#expense-form`, confirm all functions are in scope
   - Manually verify the smoke-test checklist from the design's Tier 1 tests:
     1. Add one transaction per category; confirm balance, list, and chart update
