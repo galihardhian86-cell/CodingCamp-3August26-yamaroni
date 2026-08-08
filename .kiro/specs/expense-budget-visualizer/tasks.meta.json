@@ -7,6 +7,10 @@
     "6.3 Write property test for `formatAmount()` — round-half-up rule": {
       "status": "passed",
       "lastRunTimestamp": 1786164668670
+    },
+    "7.4 Write property test for localStorage round-trip": {
+      "status": "passed",
+      "lastRunTimestamp": 1786165137990
     }
   },
   "executionHistory": {

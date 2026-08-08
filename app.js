@@ -270,15 +270,21 @@ function initChart() {
  *
  * Requirements: 5.3, 5.4, 5.5
  */
-document.addEventListener('DOMContentLoaded', () => {
-  // Load persisted transactions, filtering out any malformed entries
-  const loaded = storage.load();
-  state.transactions = loaded.filter(isValidTransaction);
+// Bootstrap the application only in a real browser environment
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', function () {
+    // Load persisted transactions, filtering out any malformed entries
+    var loaded = storage.load();
+    state.transactions = loaded.filter(isValidTransaction);
 
-  // Initialise chart first, then render the initial state
-  initChart();
-  render();
+    // Initialise chart first, then render the initial state
+    initChart();
+    render();
 
-  // Wire up form submission
-  document.getElementById('expense-form').addEventListener('submit', addTransaction);
-});
+    // Wire up form submission
+    document.getElementById('expense-form').addEventListener('submit', addTransaction);
+  });
+}
+
+// Export for Node.js testing environments without breaking browser execution
+if (typeof module !== 'undefined') module.exports = { validate, formatAmount, isValidTransaction, storage };
