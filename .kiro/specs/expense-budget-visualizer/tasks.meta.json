@@ -1,0 +1,168 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffold project files and HTML skeleton": [
+      {
+        "executionId": "3871f618-8ff7-492e-aff8-b675b5f5b7f5",
+        "chatSessionId": "sess_f29e5414-b5a2-4d34-83fd-da5ca6a63d08",
+        "timestamp": 1786159027555
+      }
+    ],
+    "2. Implement base styles and responsive layout": [
+      {
+        "executionId": "e1691e63-bd81-40cd-87f5-f037f0fe9742",
+        "chatSessionId": "sess_0f0067ce-dfcb-43df-8c2e-598a375294e0",
+        "timestamp": 1786159092092
+      },
+      {
+        "executionId": "e1691e63-bd81-40cd-87f5-f037f0fe9742",
+        "chatSessionId": "sess_0f0067ce-dfcb-43df-8c2e-598a375294e0",
+        "timestamp": 1786159158810
+      }
+    ],
+    "2.1 Write mobile-first base CSS": [
+      {
+        "executionId": "e1691e63-bd81-40cd-87f5-f037f0fe9742",
+        "chatSessionId": "sess_0f0067ce-dfcb-43df-8c2e-598a375294e0",
+        "timestamp": 1786159152972
+      },
+      {
+        "executionId": "3e95594a-8ac1-47c5-a5f2-573528855093",
+        "chatSessionId": "sess_188f7b43-d46f-437b-a622-dc39e28b6916",
+        "timestamp": 1786159171664
+      },
+      {
+        "executionId": "3e95594a-8ac1-47c5-a5f2-573528855093",
+        "chatSessionId": "sess_188f7b43-d46f-437b-a622-dc39e28b6916",
+        "timestamp": 1786159210824
+      }
+    ],
+    "2.2 Add desktop breakpoint and transaction list scroll": [
+      {
+        "executionId": "e1691e63-bd81-40cd-87f5-f037f0fe9742",
+        "chatSessionId": "sess_0f0067ce-dfcb-43df-8c2e-598a375294e0",
+        "timestamp": 1786159158750
+      },
+      {
+        "executionId": "04dd1be1-bf68-4b80-ad39-5f1a66a1d9e1",
+        "chatSessionId": "sess_7cecb9bc-e627-48fc-8428-a35a80cead42",
+        "timestamp": 1786159230254
+      },
+      {
+        "executionId": "04dd1be1-bf68-4b80-ad39-5f1a66a1d9e1",
+        "chatSessionId": "sess_7cecb9bc-e627-48fc-8428-a35a80cead42",
+        "timestamp": 1786159250706
+      }
+    ],
+    "3. Implement the Balance Display component styles": [
+      {
+        "executionId": "b522e27e-8fa5-4c28-a444-a62bc027a77f",
+        "chatSessionId": "sess_3b19a092-21ee-4401-af65-0d9264f9e5ab",
+        "timestamp": 1786159261498
+      },
+      {
+        "executionId": "b522e27e-8fa5-4c28-a444-a62bc027a77f",
+        "chatSessionId": "sess_3b19a092-21ee-4401-af65-0d9264f9e5ab",
+        "timestamp": 1786159333644
+      }
+    ],
+    "4. Style the Input Form and Transaction List": [
+      {
+        "executionId": "7bf23117-eb9c-4329-9916-3c16608aa882",
+        "chatSessionId": "sess_797db484-2735-4294-ad70-af7bafcabb3f",
+        "timestamp": 1786159353840
+      },
+      {
+        "executionId": "7bf23117-eb9c-4329-9916-3c16608aa882",
+        "chatSessionId": "sess_797db484-2735-4294-ad70-af7bafcabb3f",
+        "timestamp": 1786159437642
+      }
+    ],
+    "5. Implement the Validator module in `app.js`": [
+      {
+        "executionId": "69e4af89-4fd8-4592-ac4a-c13c12772055",
+        "chatSessionId": "sess_30d992aa-6237-405f-b8ae-6e06786eb261",
+        "timestamp": 1786159457866
+      },
+      {
+        "executionId": "69e4af89-4fd8-4592-ac4a-c13c12772055",
+        "chatSessionId": "sess_30d992aa-6237-405f-b8ae-6e06786eb261",
+        "timestamp": 1786159518176
+      }
+    ],
+    "5.1 Write the `validate(itemName, amountStr, category)` function": [
+      {
+        "executionId": "063be65a-3794-4424-9069-5d3928b1a062",
+        "chatSessionId": "sess_2314c604-e3ce-4783-87ed-a41f092ca1b5",
+        "timestamp": 1786159536337
+      },
+      {
+        "executionId": "063be65a-3794-4424-9069-5d3928b1a062",
+        "chatSessionId": "sess_2314c604-e3ce-4783-87ed-a41f092ca1b5",
+        "timestamp": 1786159579633
+      }
+    ],
+    "6. Implement the data model, state object, and helper functions in `app.js`": [
+      {
+        "executionId": "ac75d4c9-38f9-4696-aee6-ced2e9bc8a4a",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786159597973
+      },
+      {
+        "executionId": "ac75d4c9-38f9-4696-aee6-ced2e9bc8a4a",
+        "chatSessionId": "sess_68667d10-bdd1-4dbb-8157-7c15711e8105",
+        "timestamp": 1786159670156
+      }
+    ],
+    "6.1 Define the `state` object, `Transaction` JSDoc typedef, and `CHART_COLORS` constant": [
+      {
+        "executionId": "e3d244d3-6db0-4136-882d-1d4a3fc4a3e3",
+        "chatSessionId": "sess_7c4f9be9-8dad-4c26-a73e-7f6dd022d567",
+        "timestamp": 1786159683671
+      },
+      {
+        "executionId": "e3d244d3-6db0-4136-882d-1d4a3fc4a3e3",
+        "chatSessionId": "sess_7c4f9be9-8dad-4c26-a73e-7f6dd022d567",
+        "timestamp": 1786159724751
+      }
+    ],
+    "6.2 Implement `formatAmount(value)` and `getCategoryTotals()` pure helpers": [
+      {
+        "executionId": "3ff24b6a-35c8-4c1d-beb4-ac05c5faf5bf",
+        "chatSessionId": "sess_4d22945b-5cee-4bac-a70b-8d6aa525055a",
+        "timestamp": 1786159738465
+      },
+      {
+        "executionId": "3ff24b6a-35c8-4c1d-beb4-ac05c5faf5bf",
+        "chatSessionId": "sess_4d22945b-5cee-4bac-a70b-8d6aa525055a",
+        "timestamp": 1786160559784
+      }
+    ],
+    "7.1 Write `isValidTransaction(obj)` shape-guard function": [
+      {
+        "executionId": "f1a104d6-1b3a-4685-9702-4af8a39fb07d",
+        "chatSessionId": "sess_7f9dfb77-4045-4b3e-a90e-21f6d2d3cb18",
+        "timestamp": 1786160573572
+      },
+      {
+        "executionId": "f1a104d6-1b3a-4685-9702-4af8a39fb07d",
+        "chatSessionId": "sess_7f9dfb77-4045-4b3e-a90e-21f6d2d3cb18",
+        "timestamp": 1786160630489
+      }
+    ],
+    "7.2 Write `storage.save(transactions)` with try/catch": [
+      {
+        "executionId": "5effd979-0945-4d6a-9c42-dfab31cea4e4",
+        "chatSessionId": "sess_18fd6f3f-963c-4766-ad31-9ddeeb850e1b",
+        "timestamp": 1786160642415
+      }
+    ],
+    "5.3 Write property test for `validate()` — valid inputs pass": [
+      {
+        "executionId": "d6b95a8b-35a0-46d0-986e-cfd78159fe7b",
+        "chatSessionId": "sess_d8a16888-dbc3-4f54-9328-d385c155a3c5",
+        "timestamp": 1786160691673
+      }
+    ]
+  }
+}

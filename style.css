@@ -1,0 +1,337 @@
+/* style.css — Expense & Budget Visualizer */
+
+/* ============================================================
+   GLOBAL RESET & BOX MODEL (Requirement 6.1, 6.6)
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent overflow at any viewport width */
+img,
+canvas,
+input,
+select,
+button {
+  max-width: 100%;
+}
+
+/* ============================================================
+   BASE LAYOUT — mobile-first (Requirement 6.1, 6.6)
+   ============================================================ */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Stacked on mobile by default */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   DESKTOP BREAKPOINT (Requirement 6.1, 6.6)
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .form-panel {
+    flex: 1;
+  }
+
+  .chart-panel {
+    flex: 1;
+  }
+}
+
+/* ============================================================
+   TRANSACTION LIST SCROLL (Requirement 2.2, 6.1)
+   ============================================================ */
+
+#transaction-list {
+  max-height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   BALANCE DISPLAY (Requirement 3.1, 3.4)
+   ============================================================ */
+
+#balance-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f0f4ff;
+  border: 1px solid #c7d3f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#balance-display .label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#balance-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.1;
+}
+
+/* ============================================================
+   ERROR BANNER (Requirement 2.5, 5.4)
+   ============================================================ */
+
+/* Hidden by default — JS removes the `hidden` attribute to show the banner.
+   The [hidden] selector override and :not(:empty) both guard visibility. */
+#app-error {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  color: #92400e;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Shown when JS removes the hidden attribute */
+#app-error:not([hidden]) {
+  display: block;
+}
+
+/* Fallback: also show when the element has content,
+   in case hidden attribute is not used by the JS */
+#app-error:not(:empty) {
+  display: block;
+}
+
+/* ============================================================
+   FOCUS INDICATORS — keyboard accessibility (Requirement 6.2)
+   ============================================================ */
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   INPUT FORM — field groups, errors, submit button
+   (Requirements 1.1, 6.2)
+   ============================================================ */
+
+/* Stack label → input/select → error-message vertically */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.field-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.field-group input,
+.field-group select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #1a202c;
+  transition: border-color 0.15s ease;
+}
+
+.field-group input:hover,
+.field-group select:hover {
+  border-color: #9ca3af;
+}
+
+/* Inline error message — red, smaller, takes no space when empty */
+.error-msg {
+  color: #dc2626;
+  font-size: smaller;
+  /* Collapse height when content is empty so it doesn't push layout */
+  min-height: 0;
+}
+
+.error-msg:empty {
+  display: none;
+}
+
+/* Submit button — min 44×44px tap target (Requirements 6.2) */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+button[type="submit"]:active {
+  background-color: #1e40af;
+}
+
+/* ============================================================
+   TRANSACTION LIST — items and delete button
+   (Requirements 2.1, 2.2, 2.6, 6.2)
+   ============================================================ */
+
+/* Remove default list styling */
+#transaction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each row: flex row with name, category, amount, delete */
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-item:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Name stretches to fill available space */
+.tx-name {
+  flex: 1 1 auto;
+  min-width: 0;           /* allow text-overflow to work in flex child */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  color: #1a202c;
+}
+
+/* Category badge — fixed width, muted colour */
+.tx-category {
+  flex: 0 0 auto;
+  font-size: 0.8125rem;
+  color: #6b7280;
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* Amount — right-aligned, monospace for digit alignment */
+.tx-amount {
+  flex: 0 0 auto;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #111827;
+  white-space: nowrap;
+}
+
+/* Delete button — min 44×44px tap target, accessible states */
+.delete-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #6b7280;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.delete-btn:active {
+  background-color: #fecaca;
+}
+
+/* Explicit focus-visible for delete button (already covered globally,
+   repeated here for specificity and red-tinted ring to match hover) */
+.delete-btn:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   EMPTY STATES (Requirements 2.6)
+   ============================================================ */
+
+/* Centred, muted informational text for both empty-state variants */
+.empty-state,
+.chart-empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9375rem;
+  font-style: italic;
+  padding: 1.5rem 1rem;
+  margin: 0;
+}
+
+/* ============================================================
+   CHART CONTAINER
+   ============================================================ */
+
+.chart-container {
+  position: relative;
+  width: 100%;
+}
