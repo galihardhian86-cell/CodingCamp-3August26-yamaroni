@@ -44,9 +44,6 @@ function validate(itemName, amountStr, category) {
   };
 }
 
-// Export for Node.js testing environments without breaking browser execution
-if (typeof module !== 'undefined') module.exports = { validate, formatAmount, isValidTransaction, storage };
-
 // =============================================================================
 // === DATA MODEL & STATE ===
 // =============================================================================

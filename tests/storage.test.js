@@ -12,12 +12,12 @@
 const assert = require('assert');
 
 // --- Mock localStorage (in-memory, no browser required) ---
-const localStorageMock = (() => {
+const localStorageMock = (function () {
   let store = {};
   return {
-    getItem:  (key)        => store[key] ?? null,
-    setItem:  (key, value) => { store[key] = String(value); },
-    clear:    ()           => { store = {}; },
+    getItem:  function (key)        { return store[key] !== undefined ? store[key] : null; },
+    setItem:  function (key, value) { store[key] = String(value); },
+    clear:    function ()           { store = {}; },
   };
 })();
 global.localStorage = localStorageMock;
